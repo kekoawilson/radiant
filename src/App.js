@@ -97,7 +97,7 @@ class App extends Component {
                     <SearchButton onClick={this.handleSearch} />
                     {images.length > 0 &&
                     <Grid centered relaxed divided columns={4}>
-                        <Grid.Column centered divided verticalAlign="middle">
+                        <Grid.Column divided verticalAlign="middle">
                             {picture}
                         </Grid.Column>
                     </Grid>
