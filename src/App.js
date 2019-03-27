@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable space-before-function-paren */
 import React, { Component } from "react";
 import "./App.css";
