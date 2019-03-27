@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const config = require(`./config`);
+const config = require(`../config`);
 const axios = require('axios');
 
 // Middleware

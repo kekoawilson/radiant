@@ -6,6 +6,12 @@ This is a small fullstack appliction that allows you to search for pictures. Thi
 
 Node.js needs to be downloaded onto your computer for this project to run locally. You will also need NPM.
 
+### Getting Started
+
+Create a file named `config.js` in the root folder of the project. Copy over the values from the file named `example.config.js` file. Your env variables should now be set.
+
+React dev server is set to port 3000, node server is set to 3001.
+
 ### Installing
 
 To install all needed dependencies, open the terminal in the projects root folder and run 

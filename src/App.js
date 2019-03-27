@@ -1,12 +1,13 @@
 /* eslint-disable max-len */
 /* eslint-disable space-before-function-paren */
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component } from 'react';
+import './App.css';
 import ImgModal from './ImageModal';
 import ImageCard from './ImageCard';
 import axios from 'axios';
 import { THUMBNAIL } from './constants';
-import { Button, Input, Grid } from "semantic-ui-react";
+import { Button, Input, Grid } from 'semantic-ui-react';
+import { searchAPI } from '../config';
 
 class App extends Component {
     constructor() {
@@ -30,7 +31,7 @@ class App extends Component {
     }
 
     handleSearch() {
-        axios.get('http://localhost:3001/api/search', {
+        axios.get(searchAPI, {
             params: {
                 keyword: this.state.userInput
             }
