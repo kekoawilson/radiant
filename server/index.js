@@ -1,10 +1,10 @@
-require('dotenv').config();
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const config = require(`./config`);
 const axios = require('axios');
+
+// Middleware
 
 const app = express();
 app.use(cors());
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/search', (req, res) => {
-    return axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${config.apiKey}&sort=relevance&per_page=25&format=json&text=${req.query.keyword}&nojsoncallback=1`)
+    return axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${config.apiKey}&sort=relevance&per_page=${config.perpage}&format=json&text=${req.query.keyword}&nojsoncallback=1`)
         .then(resp => {
             res.send(resp.data);
         }).catch(error => console.error(error));

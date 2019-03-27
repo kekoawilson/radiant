@@ -1,18 +1,26 @@
 /* eslint-disable space-before-function-paren */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Image, Modal } from 'semantic-ui-react';
 import { FULLSIZE } from './constants';
 
 
 class ImageModal extends Component {
     imageFinder(array, id) {
-        let correctImgObj;
-        array.forEach(imageObj => {
-            if (imageObj.id === id) {
-                correctImgObj = imageObj;
+        try {
+            if (!array || !id) {
+                throw new Error("Missing params to find image.");
             }
-        });
-        return correctImgObj;
+            let correctImgObj;
+            array.forEach(imageObj => {
+                if (imageObj.id === id) {
+                    correctImgObj = imageObj;
+                }
+            });
+            return correctImgObj;
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     render() {
@@ -28,5 +36,13 @@ class ImageModal extends Component {
         );
     }
 }
+
+ImageModal.propTypes = {
+    images: PropTypes.array,
+    urlBuilder: PropTypes.func,
+    open: PropTypes.bool,
+    close: PropTypes.func,
+    id: PropTypes.string
+};
 
 export default ImageModal;
